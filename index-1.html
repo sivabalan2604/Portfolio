@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sivabalan G | Java Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f1ec;--bg2:#fdeedd;--ink:#12213a;--mute:#56627a;--line:#d9dde3;--acc:#0e7c66;--acc2:#e4572e;--card:#fff;--code:#12213a;--codeink:#e8ecf3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1729;--ink:#e8ecf3;--mute:#9aa6bd;--line:#26314a;--acc:#3fd0b0;--acc2:#ff8a65;--card:#16203a;--code:#080e1c;--bg2:#1d2347}}
+:root[data-theme="dark"]{--bg:#0f1729;--bg2:#1d2347;--ink:#e8ecf3;--mute:#9aa6bd;--line:#26314a;--acc:#3fd0b0;--acc2:#ff8a65;--card:#16203a;--code:#080e1c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(160deg,var(--bg) 0%,var(--bg2) 100%);background-attachment:fixed;min-height:100vh;color:var(--ink);font:400 1rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.nav strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem}
+.nav nav{display:flex;gap:16px;overflow-x:auto;font-size:.92rem}
+.nav nav a{text-decoration:none;color:var(--mute);white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+.hero{padding:56px 0 40px;display:grid;gap:32px}
+@media(min-width:800px){.hero{grid-template-columns:1.2fr 1fr;align-items:center;padding:88px 0 64px}}
+.hero h1{font-size:clamp(2.8rem,9vw,5.2rem);font-weight:800;letter-spacing:-.03em}
+.hero p.lead{font-size:1.15rem;color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:11px 18px;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--acc2)}
+pre.code{background:var(--code);color:var(--codeink);border-radius:12px;padding:20px;margin:0;font:.86rem/1.7 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;min-height:250px}
+.k{color:#ff8a65}.t{color:#3fd0b0}.s{color:#f2c94c}
+.cur{display:inline-block;width:8px;height:1em;background:var(--codeink);vertical-align:-2px;animation:b 1s steps(2) infinite}
+@keyframes b{50%{opacity:0}}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:24px;letter-spacing:-.02em}
+.grid{display:grid;gap:14px}
+@media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card ul{margin:10px 0 0;padding-left:18px;color:var(--mute)}
+.card li{margin:6px 0}
+.meta{color:var(--mute);font-size:.9rem;margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:.85rem;background:var(--bg)}
+.chip.new{border-color:var(--acc);color:var(--acc)}
+.skills dt{font-weight:500;margin-top:14px}
+.skills dd{margin:6px 0 0}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font:inherit}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hide{display:none}
+form{display:grid;gap:12px;max-width:520px}
+label{font-weight:500;font-size:.92rem}
+input,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+#msg{color:var(--acc);min-height:1.5em;margin:0}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){.cur{animation:none}html{scroll-behavior:auto}}
+
+
+/* professional theme */
+:root{--bg:#f4f6fa;--ink:#0f1b2d;--mute:#5a6678;--line:#e1e6ee;--acc:#1e56d6;--acc2:#1e56d6;--card:#fff;--code:#0f1b2d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--ink:#e7ecf4;--mute:#97a3b8;--line:#1f2a40;--acc:#5b8cff;--acc2:#5b8cff;--card:#121b2e;--code:#080e1a}}
+:root[data-theme="dark"]{--bg:#0b1220;--ink:#e7ecf4;--mute:#97a3b8;--line:#1f2a40;--acc:#5b8cff;--acc2:#5b8cff;--card:#121b2e;--code:#080e1a}
+body,h1,h2,h3,.nav strong{font-family:"Inter",system-ui,-apple-system,sans-serif}
+body{background:var(--bg);background-image:none;font-weight:400;line-height:1.7}
+header.nav{background:var(--card);border-bottom:1px solid var(--line)}
+.nav strong{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.nav nav a{color:var(--mute);font-weight:500}
+.nav nav a:hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--bg);border-radius:8px;font-weight:500}
+.eyebrow{margin:0 0 14px;color:var(--acc);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-weight:700;font-size:clamp(2.6rem,7vw,4.2rem);letter-spacing:-.035em;color:var(--ink)}
+.hero p.lead{color:var(--mute);font-weight:400;font-size:1.1rem}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;font-weight:600}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.p:hover{filter:brightness(1.1)}
+.btn:hover{border-color:var(--acc)}
+pre.code{border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,45,.14)}
+section{border-top:1px solid var(--line)}
+section h2{font-weight:700;font-size:clamp(1.7rem,4.5vw,2.2rem);letter-spacing:-.025em;position:relative;padding-bottom:14px;display:inline-block}
+section h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:4px;border-radius:2px;background:var(--acc)}
+.card,.grid .card:nth-child(n){border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(15,27,45,.06),0 8px 24px rgba(15,27,45,.05)}
+.card h3{font-weight:600;font-size:1.1rem}
+.card ul{color:var(--mute)}
+.meta{color:var(--mute);font-weight:500}
+.skills dt{font-weight:600}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:500}
+.chip.new{border-color:var(--acc);color:var(--acc)}
+.tabs button{border:1px solid var(--line);border-radius:8px;font-weight:500}
+.tabs button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+input,textarea{border:1px solid var(--line)}
+footer{border-top:1px solid var(--line);color:var(--mute);font-weight:400}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<strong>Sivabalan G</strong>
+<nav aria-label="Sections"><a href="#skills">Skills</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+<button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+</div></header>
+
+<main class="wrap">
+<div class="hero">
+<div>
+<p class="eyebrow">Java Developer | Trichy, Tamil Nadu</p>
+<h1>Sivabalan G</h1>
+<p class="lead">Java developer from Trichy. I build role-based web applications with Java, Servlets, JSP, Spring Boot and MySQL.</p>
+<div class="btns"><a class="btn p" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a><a class="btn" href="https://github.com/sivabalan2604" target="_blank" rel="noopener">GitHub</a></div>
+</div>
+<pre class="code" id="code" aria-label="Code card describing Sivabalan"></pre>
+</div>
+
+<section id="skills">
+<h2>Skills</h2>
+<dl class="skills">
+<dt>Languages</dt><dd class="chips"><span class="chip">Java</span><span class="chip">SQL</span></dd>
+<dt>Java frameworks and persistence</dt><dd class="chips"><span class="chip new">Spring Boot</span><span class="chip">JDBC</span><span class="chip">Hibernate</span><span class="chip">JSP</span><span class="chip">Servlets</span></dd>
+<dt>Web</dt><dd class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Bootstrap</span></dd>
+<dt>Databases</dt><dd class="chips"><span class="chip">MySQL</span><span class="chip">DBMS</span><span class="chip">RDBMS</span></dd>
+<dt>Tools</dt><dd class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Eclipse</span><span class="chip">Apache Tomcat</span></dd>
+<dt>Core concepts</dt><dd class="chips"><span class="chip">OOP</span><span class="chip">Data structures and algorithms</span><span class="chip">MVC</span></dd>
+</dl>
+</section>
+
+<section id="work">
+<h2>Experience</h2>
+<div class="card">
+<h3>Web Development Intern, Fantasy Software Solutions</h3>
+<p class="meta">Jan 2024 to Mar 2024</p>
+<ul>
+<li>Built 10+ responsive pages with HTML5, CSS3 and Bootstrap, cutting page load inconsistencies by 20%.</li>
+<li>Added interactive JavaScript features that improved UI responsiveness.</li>
+<li>Automated repetitive workflows and optimized backend processes, raising team efficiency by 15%.</li>
+<li>Delivered features on schedule in an Agile team.</li>
+</ul>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="tabs" role="group" aria-label="Filter projects">
+<button type="button" data-f="all" aria-pressed="true">All</button>
+<button type="button" data-f="java" aria-pressed="false">Java</button>
+<button type="button" data-f="web" aria-pressed="false">Web</button>
+</div>
+<div class="grid two">
+<article class="card" data-t="java web">
+<h3>Hospital Management System</h3>
+<p class="meta">Java, JSP, Servlet, MySQL, HTML, CSS, Git</p>
+<ul>
+<li>Role-based app for patients, doctors and admins with secure login and sessions.</li>
+<li>Appointment booking with live doctor availability, cutting manual scheduling by about 40%.</li>
+<li>Normalized MySQL schema with 8+ tables and tuned report queries.</li>
+<li>MVC on Apache Tomcat, versioned on GitHub.</li>
+</ul>
+</article>
+<article class="card" data-t="web">
+<h3>Personal Portfolio Website</h3>
+<p class="meta">HTML, CSS, JavaScript</p>
+<ul>
+<li>Responsive single-page site with light and dark themes.</li>
+<li>Project filter and contact form built in plain JavaScript.</li>
+<li>No frameworks, one file, loads fast on mobile.</li>
+</ul>
+</article>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card"><h3>B.Tech, Computer Science and Engineering</h3><p class="meta">M.A.M College of Engineering, Trichy | 2021 to 2025 | CGPA 7.77</p></div>
+<div class="card"><h3>HSC (Class XII)</h3><p class="meta">Kalaimagal Matric. Hr. Sec. School | Mar 2021 | 78.70%</p></div>
+<div class="card"><h3>SSLC (Class X)</h3><p class="meta">Kalaimagal Matric. Hr. Sec. School | May 2019 | 68%</p></div>
+</div>
+<p>I have solved 100+ algorithm problems on LeetCode, covering dynamic programming and complexity analysis.</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email <a href="mailto:sivabalan26042004@gmail.com">sivabalan26042004@gmail.com</a> or call <a href="tel:+917339081304">+91 73390 81304</a>. Based in Trichy, Tamil Nadu. My code is on <a href="https://github.com/sivabalan2604" target="_blank" rel="noopener">GitHub</a>.</p>
+<form id="cf">
+<div><label for="n">Name</label><input id="n" required></div>
+<div><label for="e">Email</label><input id="e" type="email" required></div>
+<div><label for="m">Message</label><textarea id="m" rows="4" required></textarea></div>
+<button class="btn p" type="submit">Send message</button>
+<p id="msg" role="status"></p>
+</form>
+</section>
+</main>
+
+<footer><div class="wrap">Sivabalan G, Trichy. <a href="https://github.com/sivabalan2604" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.linkedin.com/">LinkedIn</a></div></footer>
+
+<script>
+(function(){
+var root=document.documentElement,tb=document.getElementById('theme');
+try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+tb.onclick=function(){
+var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+var v=dark?'light':'dark';root.setAttribute('data-theme',v);try{localStorage.setItem('theme',v)}catch(e){}
+};
+var lines=[
+'<span class="k">public class</span> <span class="t">Developer</span> {',
+'  String name  = <span class="s">"Sivabalan G"</span>;',
+'  String role  = <span class="s">"Java Developer"</span>;',
+'  String stack = <span class="s">"Java, Spring Boot, MySQL"</span>;',
+'  String city  = <span class="s">"Trichy"</span>;',
+'  <span class="k">boolean</span> openToWork = <span class="k">true</span>;',
+'}'];
+var el=document.getElementById('code'),full=lines.join('\n');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.innerHTML=full;}
+else{
+var i=0,out='',tag=false,buf='';
+(function step(){
+if(i>=full.length){el.innerHTML=full+'<span class="cur"></span>';return}
+var c=full[i++];out+=c;
+if(c==='<')tag=true;
+if(c==='>')tag=false;
+if(!tag){el.innerHTML=out+'<span class="cur"></span>';setTimeout(step,14)}else step();
+})();
+}
+var fb=document.querySelectorAll('.tabs button'),cards=document.querySelectorAll('[data-t]');
+fb.forEach(function(b){b.onclick=function(){
+fb.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+var f=b.dataset.f;
+cards.forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.t.indexOf(f)<0)});
+}});
+document.getElementById('cf').onsubmit=function(ev){
+ev.preventDefault();
+var n=document.getElementById('n').value,m=document.getElementById('m').value;
+location.href='mailto:sivabalan26042004@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m);
+document.getElementById('msg').textContent='Opening your email app.';
+};
+})();
+</script>
+</body>
+</html>
